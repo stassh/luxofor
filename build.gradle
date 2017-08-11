@@ -17,6 +17,10 @@ buildscript {
     }
 }
 
+plugins {
+    id "org.sonarqube" version "2.2.1"
+}
+
 allprojects {
     repositories {
         jcenter()
@@ -26,3 +30,29 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+sonarqube {
+    properties {
+
+        property "sonar.host.url", "http://rix31534.internal.corp:9000"
+        property "sonar.projectName", "luxofor"
+        property "sonar.projectKey", "com.stassh.luxofor"
+        property "sonar.sources","src/main/java"
+        property "sonar.language","java"
+        property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.exclusions",
+                "src/main/java/hotelpan/ch/Models/Proto/**, " +
+                        "src/main/assets/**, " +
+                        "**/R.java, " +
+                        "src/main/res/** "
+
+        property "sonar.android.lint.report", "build/outputs/lint-results.xml"
+        property "sonar.java.binaries", "build/intermediates/classes/dev/debug"
+        property "sonar.jacoco.reportPaths","build/jacoco/testDevDebugUnitTest.exec"
+        //property "sonar.jacoco.itReportPath", instrumentationFileName
+    }
+}
+
+
+
+tasks.sonarqube.dependsOn ":app:createTestReport"
