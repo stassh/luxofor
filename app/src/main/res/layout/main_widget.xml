@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="horizontal"
+  android:padding="@dimen/widget_margin"
+  android:background="#09C"
+  android:weightSum="3">
+
+  <ImageView
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="10dp"
+    android:layout_weight="1"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:scaleType="fitCenter"
+    android:src="@drawable/ic_apple_logo_black_24dp"
+    />
+  <ImageView
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="10dp"
+    android:layout_weight="1"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:scaleType="fitCenter"
+    android:src="@drawable/ic_android_black_24dp"
+    />
+  <ImageView
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_weight="1"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:scaleType="fitCenter"
+    android:src="@drawable/ic_windows_black_24dp"
+    />
+
+
+  <TextView
+    android:id="@+id/appwidget_text"
+    android:textStyle="bold|italic"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:background="#09C"
+    android:contentDescription="@string/appwidget_text"
+    android:text="@string/appwidget_text"
+    android:textColor="#ffffff"
+    android:textSize="24sp"
+    android:visibility="gone"
+    />
+
+</LinearLayout>
