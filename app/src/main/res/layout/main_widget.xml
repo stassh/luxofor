@@ -1,23 +1,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:orientation="horizontal"
   android:padding="@dimen/widget_margin"
-  android:background="#09C"
+  android:background="@color/transparent"
   android:weightSum="3">
 
   <ImageView
+    android:id="@+id/apple_logo_img"
     android:layout_marginTop="10dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="5dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="5dp"
     android:layout_marginBottom="10dp"
     android:layout_weight="1"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:scaleType="fitCenter"
     android:src="@drawable/ic_apple_logo_black_24dp"
+    android:tint="@color/colorPrimary"
     />
+
   <ImageView
+    android:id="@+id/android_logo_img"
     android:layout_marginTop="10dp"
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
@@ -28,10 +33,12 @@
     android:scaleType="fitCenter"
     android:src="@drawable/ic_android_black_24dp"
     />
+
   <ImageView
+    android:id="@+id/windows_logo_img"
     android:layout_marginTop="10dp"
-    android:layout_marginLeft="5dp"
-    android:layout_marginRight="10dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="10dp"
     android:layout_marginBottom="10dp"
     android:layout_weight="1"
     android:layout_width="wrap_content"

@@ -3,6 +3,8 @@ package com.sshabalin.luxofor;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
+import android.graphics.Color;
+import android.widget.ImageView;
 import android.widget.RemoteViews;
 
 /**
@@ -17,7 +19,10 @@ public class Widget extends AppWidgetProvider {
     CharSequence widgetText = WidgetConfigureActivity.loadTitlePref(context, appWidgetId);
     // Construct the RemoteViews object
     RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.main_widget);
-    views.setTextViewText(R.id.appwidget_text, widgetText);
+
+    views.setInt(R.id.apple_logo_img, "setColorFilter", Color.RED);
+    views.setInt(R.id.android_logo_img, "setColorFilter", Color.GREEN);
+    views.setInt(R.id.windows_logo_img, "setColorFilter", Color.YELLOW);
 
     // Instruct the widget manager to update the widget
     appWidgetManager.updateAppWidget(appWidgetId, views);
