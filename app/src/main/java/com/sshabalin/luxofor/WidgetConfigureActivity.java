@@ -14,7 +14,7 @@ import android.widget.EditText;
  */
 public class WidgetConfigureActivity extends Activity {
 
-  private static final String PREFS_NAME = "com.sshabalin.luxofor.Widget";
+  private static final String PREFS_NAME = "com.sshabalin.luxofor";
   private static final String PREF_PREFIX_KEY = "appwidget_";
   int mAppWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID;
   EditText mAppWidgetText;

@@ -15,13 +15,12 @@ import android.support.annotation.Nullable;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.widget.RemoteViews;
-import java.sql.Time;
 
 /**
  * Created by sshabalin on 16/08/2017.
  */
 
-public class Service extends IntentService implements LuxoforContract.View {
+public class Service extends IntentService {
   private static final String PACKAGE_NAME = "com.sshabalin.luxofor";
   private static final String METHOD_NAME = "setColorFilter";
   private static final String TAG = "Service";
@@ -77,9 +76,9 @@ public class Service extends IntentService implements LuxoforContract.View {
 
 
     int state = State.CLEAR;
-
-    LuxoforContract.Presenter presenter = new Presenter(this, state, appWidgetId);
-    presenter.update();
+    setStatus(appWidgetId, state);
+    //LuxoforContract.Presenter presenter = new Presenter(this, state, appWidgetId);
+    //presenter.update();
   }
 
   private void scheduleNextUpdate() {
@@ -101,7 +100,7 @@ public class Service extends IntentService implements LuxoforContract.View {
     alarmManager.setWindow(AlarmManager.RTC, nextUpdate, nextUpdate + 2000, pendingIntent);
   }
 
-  @Override
+//  @Override
   public void setStatus(int appWidgetId, int state) {
     CharSequence widgetText = WidgetConfigureActivity.loadTitlePref(this, appWidgetId);
     // Construct the RemoteViews object
